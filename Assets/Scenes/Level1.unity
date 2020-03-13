@@ -526,10 +526,11 @@ GameObject:
   - component: {fileID: 2045553096}
   - component: {fileID: 2045553095}
   - component: {fileID: 2045553097}
+  - component: {fileID: 2045553099}
   - component: {fileID: 2045553098}
   m_Layer: 0
   m_Name: Spaceship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -640,3 +641,19 @@ MonoBehaviour:
   laser: {fileID: 3995087734509348798, guid: 198a8f078d3050948a14d349b430a273, type: 3}
   laserSpawn: {fileID: 1389916695}
   fireRate: 0.25
+--- !u!70 &2045553099
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045553094}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.050285038, y: 0.0077365194}
+  m_Size: {x: 2.309436, y: 1.4079245}
+  m_Direction: 1
