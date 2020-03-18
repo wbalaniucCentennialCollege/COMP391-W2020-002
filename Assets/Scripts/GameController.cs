@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -15,9 +16,18 @@ public class GameController : MonoBehaviour
     public float spawnWait;         // How long between each hazard in a wave.
     public float waveWait;          // How long between each wave.
 
+    [Header("UI Elements")]
+    public Text scoreText;
+
+    // Variables for UI
+
+    // Private variables
+    private int score = 0;
+
     // Start is called before the first frame update
     void Start()
     {
+        UpdateScore();
         StartCoroutine(SpawnWaves());
     }
 
@@ -48,5 +58,20 @@ public class GameController : MonoBehaviour
 
             yield return new WaitForSeconds(waveWait);  // Wait for the next wave of hazards
         }
+    }
+
+    // Update the score text (UI)
+    private void UpdateScore()
+    {
+        // Update our UI elements to reflect the current score.
+        scoreText.text = "Score: " + score;
+    }
+
+    // Accepts score value, increment the score, then updates the score
+    public void AddScore(int newScoreValue)
+    {
+        score += newScoreValue; // score = score + newScoreValue
+        // We must call the UpdateScore function to update the score
+        UpdateScore();
     }
 }
